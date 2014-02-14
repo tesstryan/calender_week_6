@@ -1,0 +1,103 @@
+@import "library";
+@import "reset";
+
+// Global templates
+
+%group {
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+}
+
+%container {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+// Global tags
+
+body {
+    @extend %container;
+    font-family: Helvetica;
+    font-size: 16px;
+    line-height: 21px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    margin-top: 3%;
+    h1 {font-size: 50px;
+        color: white;
+        text-align: center;
+        padding: 20px;}
+}
+
+
+
+// Everything else
+.calender_box {
+    display:table;
+    background-color: orange;
+
+    
+    .week {
+        .day_name {
+            display: table-cell;
+            text-align: center;
+            height: 30px;
+            width: 100px;
+            border: solid 1px black;
+            background-color: white;}
+
+        .day {
+            display: table-cell;
+            width: 100px;
+            height: 100px;
+            border: solid 1px black;
+            background-color: white;
+
+            p {
+                margin-left: 5px;}
+        }
+
+        .event {
+            font-size: 13px;
+            margin-left: 3px;
+        }
+
+    }
+}
+
+
+// END DESKTOP START MOBILE
+
+@media screen and (max-width: 500px) {
+
+
+    .day_name {display: none;}
+    .one {display: none;}
+    .two {display: none;}
+    .three {display: none;}
+    .five {display: none;}
+
+    .week .four .day_name {
+            display: none;
+
+        .day {
+            display: block;
+            border: solid 1px black;
+            background-color: white;
+
+            p {
+                margin-left: 5px;}
+        }
+
+        .event {
+            font-size: 11px;
+            margin-left: 3px;
+        }
+    }
+
+    .calender_box {
+        margin-top: -20px;
+    }
+}
